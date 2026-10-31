@@ -116,3 +116,7 @@ Die Faktoren hängen von Systemspannung und Nennleistung ab. Beide stehen in Par
 ```
 python tests/test_protocol.py
 ```
+
+## Lizenz
+
+MIT, siehe [LICENSE](LICENSE).
