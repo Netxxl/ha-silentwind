@@ -1,0 +1,171 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "device": {
+        "title": "Silentwind Windgenerator",
+        "description": "Choose the controller (found by name Slientwind/Win-Power) or type its MAC address. Close the Silentwind app first: the module accepts only one connection. Pairing is done automatically; the PIN is only used if the controller asks for one. RFCOMM channel 0 = detect.{error}",
+        "data": {
+          "address": "Controller / MAC address",
+          "pin": "Pairing PIN",
+          "channel": "RFCOMM channel (0 = auto)"
+        }
+      }
+    },
+    "error": {
+      "invalid_address": "Not a MAC address (AA:BB:CC:DD:EE:FF).",
+      "cannot_connect": "Bluetooth connection failed. Is the app closed and the controller in range? Wrong PIN?",
+      "no_response": "Connected, but the controller does not answer."
+    },
+    "abort": {
+      "already_configured": "Device is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Silentwind options",
+        "data": {
+          "scan_interval": "Poll interval (s)",
+          "keep_connected": "Keep Bluetooth connected (blocks the app)",
+          "has_solar": "Solar input in use"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "battery_voltage": {
+        "name": "Battery voltage"
+      },
+      "battery_current": {
+        "name": "Charge current"
+      },
+      "battery_power": {
+        "name": "Charge power"
+      },
+      "wind_voltage": {
+        "name": "Wind voltage"
+      },
+      "wind_current": {
+        "name": "Wind current"
+      },
+      "wind_power": {
+        "name": "Wind power"
+      },
+      "solar_voltage": {
+        "name": "Solar voltage"
+      },
+      "solar_current": {
+        "name": "Solar current"
+      },
+      "solar_power": {
+        "name": "Solar power"
+      },
+      "load1_current": {
+        "name": "Load 1 current"
+      },
+      "load2_current": {
+        "name": "Load 2 current"
+      },
+      "system_voltage": {
+        "name": "System voltage"
+      },
+      "rated_power": {
+        "name": "Rated power"
+      },
+      "state": {
+        "name": "Status",
+        "state": {
+          "normal": "Normal",
+          "dumping": "Dumping (unload)",
+          "overspeed_brake": "Storm brake",
+          "manual_brake": "Manual brake"
+        }
+      }
+    },
+    "binary_sensor": {
+      "battery_overvoltage": {
+        "name": "Battery overvoltage"
+      },
+      "battery_undervoltage": {
+        "name": "Battery undervoltage"
+      },
+      "load_overload": {
+        "name": "Load overload"
+      },
+      "load_short_circuit": {
+        "name": "Load short circuit"
+      },
+      "dumping": {
+        "name": "Dumping"
+      },
+      "overspeed_brake": {
+        "name": "Storm brake"
+      }
+    },
+    "number": {
+      "absorption_voltage": {
+        "name": "End of charge voltage"
+      },
+      "storm_brake_current": {
+        "name": "Storm brake current"
+      },
+      "overvoltage": {
+        "name": "Overvoltage"
+      },
+      "undervoltage_off": {
+        "name": "Undervoltage switch off"
+      },
+      "undervoltage_on": {
+        "name": "Undervoltage recovery"
+      },
+      "low_wind_boost_voltage": {
+        "name": "Low wind boost"
+      },
+      "light_on_voltage": {
+        "name": "Solar switch on (light control)"
+      },
+      "light_off_voltage": {
+        "name": "Solar switch off (light control)"
+      },
+      "load1_half_power_hours": {
+        "name": "Load 1 half-power start"
+      },
+      "load1_off_hours": {
+        "name": "Load 1 off time"
+      },
+      "load2_half_power_hours": {
+        "name": "Load 2 half-power start"
+      },
+      "load2_off_hours": {
+        "name": "Load 2 off time"
+      }
+    },
+    "select": {
+      "load_mode": {
+        "name": "Load {n} mode",
+        "state": {
+          "light_on_off": "Light control on and off",
+          "light_on_timer_off": "Light on, timer off",
+          "light_on_half_light_off": "Light on, timer half power, light off",
+          "light_on_half_timer_off": "Light on, timer half power, timer off",
+          "constant_on": "Constant on",
+          "constant_off": "Constant off",
+          "constant_half": "Constant half power"
+        }
+      }
+    },
+    "switch": {
+      "brake": {
+        "name": "Brake"
+      },
+      "load1": {
+        "name": "Load 1"
+      },
+      "load2": {
+        "name": "Load 2"
+      }
+    }
+  }
+}

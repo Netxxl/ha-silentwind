@@ -1,0 +1,171 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "device": {
+        "title": "Silentwind Windgenerator",
+        "description": "Regler auswählen (gefunden über den Namen Slientwind/Win-Power) oder MAC-Adresse eintippen. Vorher die Silentwind-App schließen: das Modul nimmt nur eine Verbindung an. Gekoppelt wird automatisch; die PIN wird nur benutzt, falls der Regler eine verlangt. RFCOMM-Kanal 0 = automatisch.{error}",
+        "data": {
+          "address": "Regler / MAC-Adresse",
+          "pin": "Kopplungs-PIN",
+          "channel": "RFCOMM-Kanal (0 = automatisch)"
+        }
+      }
+    },
+    "error": {
+      "invalid_address": "Keine MAC-Adresse (AA:BB:CC:DD:EE:FF).",
+      "cannot_connect": "Bluetooth-Verbindung fehlgeschlagen. App geschlossen, Regler in Reichweite, PIN richtig?",
+      "no_response": "Verbunden, aber der Regler antwortet nicht."
+    },
+    "abort": {
+      "already_configured": "Gerät ist bereits eingerichtet"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Silentwind-Optionen",
+        "data": {
+          "scan_interval": "Abfrageintervall (s)",
+          "keep_connected": "Bluetooth dauerhaft verbunden halten (blockiert die App)",
+          "has_solar": "Solareingang wird benutzt"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "battery_voltage": {
+        "name": "Batteriespannung"
+      },
+      "battery_current": {
+        "name": "Ladestrom"
+      },
+      "battery_power": {
+        "name": "Ladeleistung"
+      },
+      "wind_voltage": {
+        "name": "Windspannung"
+      },
+      "wind_current": {
+        "name": "Windstrom"
+      },
+      "wind_power": {
+        "name": "Windleistung"
+      },
+      "solar_voltage": {
+        "name": "Solarspannung"
+      },
+      "solar_current": {
+        "name": "Solarstrom"
+      },
+      "solar_power": {
+        "name": "Solarleistung"
+      },
+      "load1_current": {
+        "name": "Last 1 Strom"
+      },
+      "load2_current": {
+        "name": "Last 2 Strom"
+      },
+      "system_voltage": {
+        "name": "Systemspannung"
+      },
+      "rated_power": {
+        "name": "Nennleistung"
+      },
+      "state": {
+        "name": "Status",
+        "state": {
+          "normal": "Normal",
+          "dumping": "Ableiten (Dumpload)",
+          "overspeed_brake": "Sturmbremse",
+          "manual_brake": "Manuelle Bremse"
+        }
+      }
+    },
+    "binary_sensor": {
+      "battery_overvoltage": {
+        "name": "Batterie Überspannung"
+      },
+      "battery_undervoltage": {
+        "name": "Batterie Unterspannung"
+      },
+      "load_overload": {
+        "name": "Last überlastet"
+      },
+      "load_short_circuit": {
+        "name": "Last Kurzschluss"
+      },
+      "dumping": {
+        "name": "Ableiten (Dumpload)"
+      },
+      "overspeed_brake": {
+        "name": "Sturmbremse"
+      }
+    },
+    "number": {
+      "absorption_voltage": {
+        "name": "Ladeschlussspannung"
+      },
+      "storm_brake_current": {
+        "name": "Sturmbremse Strom"
+      },
+      "overvoltage": {
+        "name": "Überspannung"
+      },
+      "undervoltage_off": {
+        "name": "Unterspannung Abschalten"
+      },
+      "undervoltage_on": {
+        "name": "Unterspannung Wiedereinschalten"
+      },
+      "low_wind_boost_voltage": {
+        "name": "Low Wind Boost"
+      },
+      "light_on_voltage": {
+        "name": "Solar Einschaltspannung (Lichtsteuerung)"
+      },
+      "light_off_voltage": {
+        "name": "Solar Ausschaltspannung (Lichtsteuerung)"
+      },
+      "load1_half_power_hours": {
+        "name": "Last 1 Halbleistung ab"
+      },
+      "load1_off_hours": {
+        "name": "Last 1 Ausschaltzeit"
+      },
+      "load2_half_power_hours": {
+        "name": "Last 2 Halbleistung ab"
+      },
+      "load2_off_hours": {
+        "name": "Last 2 Ausschaltzeit"
+      }
+    },
+    "select": {
+      "load_mode": {
+        "name": "Last {n} Betriebsart",
+        "state": {
+          "light_on_off": "Lichtsteuerung an und aus",
+          "light_on_timer_off": "Licht an, Zeit aus",
+          "light_on_half_light_off": "Licht an, Zeit Halbleistung, Licht aus",
+          "light_on_half_timer_off": "Licht an, Zeit Halbleistung, Zeit aus",
+          "constant_on": "Dauernd an",
+          "constant_off": "Dauernd aus",
+          "constant_half": "Dauernd Halbleistung"
+        }
+      }
+    },
+    "switch": {
+      "brake": {
+        "name": "Bremse"
+      },
+      "load1": {
+        "name": "Last 1"
+      },
+      "load2": {
+        "name": "Last 2"
+      }
+    }
+  }
+}

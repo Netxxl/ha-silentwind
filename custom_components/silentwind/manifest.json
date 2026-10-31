@@ -1,0 +1,66 @@
+{
+  "domain": "silentwind",
+  "name": "Silentwind Windgenerator",
+  "bluetooth": [
+    {
+      "local_name": "Slientwind",
+      "connectable": true
+    },
+    {
+      "local_name": "Silentwind",
+      "connectable": true
+    },
+    {
+      "local_name": "Win-Power",
+      "connectable": true
+    },
+    {
+      "local_name": "Win-power",
+      "connectable": true
+    },
+    {
+      "local_name": "WinPower",
+      "connectable": true
+    },
+    {
+      "local_name": "Winpower",
+      "connectable": true
+    },
+    {
+      "local_name": "winpower",
+      "connectable": true
+    },
+    {
+      "local_name": "winPower",
+      "connectable": true
+    },
+    {
+      "local_name": "win-Power",
+      "connectable": true
+    },
+    {
+      "local_name": "win-power",
+      "connectable": true
+    },
+    {
+      "local_name": "IOS-win-power",
+      "connectable": true
+    }
+  ],
+  "codeowners": [
+    "@netxxl"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "bluetooth_adapters"
+  ],
+  "documentation": "https://github.com/netxxl/ha-silentwind",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/netxxl/ha-silentwind/issues",
+  "loggers": [
+    "custom_components.silentwind"
+  ],
+  "requirements": [],
+  "version": "0.3.1"
+}
