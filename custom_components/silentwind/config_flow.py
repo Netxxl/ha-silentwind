@@ -22,11 +22,13 @@ from homeassistant.helpers.selector import (
 from .bluez import BluezError, async_discover_controllers
 from .client import SilentwindClient, SilentwindConnectionError, SilentwindError
 from .const import (
+    CONF_APP_ACCESS_MINUTES,
     CONF_CHANNEL,
     CONF_HAS_SOLAR,
     CONF_KEEP_CONNECTED,
     CONF_PIN,
     CONF_SCAN_INTERVAL,
+    DEFAULT_APP_ACCESS_MINUTES,
     DEFAULT_CHANNEL,
     DEFAULT_KEEP_CONNECTED,
     DEFAULT_PIN,
@@ -149,5 +151,8 @@ class SilentwindOptionsFlow(OptionsFlow):
             ),
             vol.Required(CONF_KEEP_CONNECTED, default=opts.get(CONF_KEEP_CONNECTED, DEFAULT_KEEP_CONNECTED)): bool,
             vol.Required(CONF_HAS_SOLAR, default=opts.get(CONF_HAS_SOLAR, False)): bool,
+            vol.Required(
+                CONF_APP_ACCESS_MINUTES, default=opts.get(CONF_APP_ACCESS_MINUTES, DEFAULT_APP_ACCESS_MINUTES)
+            ): vol.All(vol.Coerce(int), vol.Range(1, 240)),
         })
         return self.async_show_form(step_id="init", data_schema=schema)

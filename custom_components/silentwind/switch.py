@@ -1,4 +1,4 @@
-"""Manual brake and load outputs, switched like the app does it."""
+"""Manual brake and load outputs, switched like the app does it, plus app access."""
 
 from __future__ import annotations
 
@@ -48,7 +48,13 @@ SWITCHES = (
 async def async_setup_entry(
     hass: HomeAssistant, entry: SilentwindConfigEntry, async_add_entities: AddEntitiesCallback
 ) -> None:
-    async_add_entities(SilentwindSwitch(entry.runtime_data, d) for d in SWITCHES)
+    coordinator = entry.runtime_data
+    async_add_entities(
+        [
+            *(SilentwindSwitch(coordinator, d) for d in SWITCHES),
+            SilentwindAppAccessSwitch(coordinator, SwitchEntityDescription(key="app_access", translation_key="app_access")),
+        ]
+    )
 
 
 class SilentwindSwitch(SilentwindEntity, SwitchEntity):
@@ -69,3 +75,26 @@ class SilentwindSwitch(SilentwindEntity, SwitchEntity):
 
     async def async_turn_off(self, **kwargs: Any) -> None:
         await self._set(False)
+
+
+class SilentwindAppAccessSwitch(SilentwindEntity, SwitchEntity):
+    """On: Home Assistant leaves the link alone for a while so the manufacturer app can connect."""
+
+    @property
+    def available(self) -> bool:
+        return True  # also needed when the app holds the link and polls fail
+
+    @property
+    def is_on(self) -> bool:
+        return self.coordinator.app_access
+
+    @property
+    def extra_state_attributes(self) -> dict[str, Any]:
+        until = self.coordinator.app_access_until
+        return {"until": until.isoformat() if until else None, "minutes": self.coordinator.app_access_minutes}
+
+    async def async_turn_on(self, **kwargs: Any) -> None:
+        await self.coordinator.async_start_app_access()
+
+    async def async_turn_off(self, **kwargs: Any) -> None:
+        await self.coordinator.async_stop_app_access()

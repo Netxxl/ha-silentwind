@@ -28,7 +28,8 @@
         "data": {
           "scan_interval": "Abfrageintervall (s)",
           "keep_connected": "Bluetooth dauerhaft verbunden halten (blockiert die App)",
-          "has_solar": "Solareingang wird benutzt"
+          "has_solar": "Solareingang wird benutzt",
+          "app_access_minutes": "Dauer App-Zugriff (Minuten)"
         }
       }
     }
@@ -165,6 +166,9 @@
       },
       "load2": {
         "name": "Last 2"
+      },
+      "app_access": {
+        "name": "App-Zugriff (Home Assistant pausiert)"
       }
     }
   }

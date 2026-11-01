@@ -13,6 +13,7 @@ Silentwind-Android-App (Version 1.3.3).
 - **Schalter:**
   - **Bremse:** die manuelle Bremse wie in der App
   - **Last 1 / Last 2:** schaltet wie die App auf „Dauernd an“ bzw. „Dauernd aus“
+  - **App-Zugriff:** gibt Bluetooth für die Hersteller-App frei (siehe unten)
 - **Einstellungen** (anfangs ausgeblendet): Ladeschlussspannung, Sturmbremse-Strom, Über- und
   Unterspannung, Low Wind Boost, Lichtsteuerungs-Spannungen, Lastzeiten, Last-Betriebsarten.
   Jede Änderung wird zur Kontrolle zurückgelesen.
@@ -65,6 +66,18 @@ Ab Home Assistant 2026.3 zeigt die Integration ihr eigenes Icon (Ordner `brand/`
 | Abfrageintervall | Sekunden zwischen zwei Abfragen (Standard 20) |
 | Dauerhaft verbunden | An (Standard): Verbindung bleibt offen und wird nur neu aufgebaut, wenn sie abreißt. Aus: nach jeder Abfrage trennen, damit die Hersteller-App zwischendurch verbinden kann |
 | Solareingang | Solar-Sensoren anlegen |
+| Dauer App-Zugriff | Minuten, die der Schalter „App-Zugriff“ Home Assistant pausiert (Standard 10) |
+
+## Hersteller-App nutzen
+
+Der Regler nimmt nur eine Bluetooth-Verbindung an. Soll die Silentwind-App ran, den Schalter
+**App-Zugriff** einschalten:
+
+- Home Assistant trennt sofort und fragt nicht mehr ab. Messwerte und Schalter sind solange „nicht verfügbar“.
+- Jetzt mit der App verbinden. Das geht auch aus der Ferne, z. B. mit einem alten Handy beim Regler,
+  das per scrcpy, AnyDesk o. Ä. ferngesteuert wird.
+- Nach der eingestellten Dauer, oder wenn du den Schalter ausschaltest, verbindet sich Home Assistant
+  wieder. Vorher die App schließen, sonst schlägt die Verbindung fehl, bis die App den Regler freigibt.
 
 ## Protokoll
 

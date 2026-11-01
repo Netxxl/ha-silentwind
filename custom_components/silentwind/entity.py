@@ -26,3 +26,8 @@ class SilentwindEntity(CoordinatorEntity[SilentwindCoordinator]):
             model="Hybrid Boost (Win-Power)",
             name="Silentwind Windgenerator",
         )
+
+    @property
+    def available(self) -> bool:
+        # no fresh values while the app has the link
+        return super().available and not self.coordinator.app_access

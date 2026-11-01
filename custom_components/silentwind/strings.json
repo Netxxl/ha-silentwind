@@ -28,7 +28,8 @@
         "data": {
           "scan_interval": "Poll interval (s)",
           "keep_connected": "Keep Bluetooth connected (blocks the app)",
-          "has_solar": "Solar input in use"
+          "has_solar": "Solar input in use",
+          "app_access_minutes": "Minutes of app access"
         }
       }
     }
@@ -165,6 +166,9 @@
       },
       "load2": {
         "name": "Load 2"
+      },
+      "app_access": {
+        "name": "App access (pause Home Assistant)"
       }
     }
   }
