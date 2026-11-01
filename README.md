@@ -130,6 +130,19 @@ Die Faktoren hängen von Systemspannung und Nennleistung ab. Beide stehen in Par
 python tests/test_protocol.py
 ```
 
+## Hinweis
+
+Dies ist ein privates, inoffizielles Projekt. Es steht **in keiner Verbindung
+zu Silentwind bzw. Win-Power** und wird vom Hersteller weder unterstützt noch
+geprüft oder freigegeben. „Silentwind“, „Win-Power“, „Hybrid Boost“ und weitere
+Namen sind Marken ihrer jeweiligen Inhaber und werden hier nur zur Beschreibung
+der Kompatibilität genannt.
+
+Das Protokoll wurde ohne Herstellerunterlagen nachvollzogen. Nutzung auf
+**eigenes Risiko**: keine Gewähr für Richtigkeit oder Eignung, keine Haftung für
+Schäden an Gerät, Anlage oder Daten. Besonders beim Trennen der Batterie zuerst
+die Turbine bremsen.
+
 ## Lizenz
 
 MIT, siehe [LICENSE](LICENSE).
