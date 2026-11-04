@@ -48,19 +48,19 @@
     }
   ],
   "codeowners": [
-    "@netxxl"
+    "@Netxxl"
   ],
   "config_flow": true,
   "dependencies": [
     "bluetooth_adapters"
   ],
-  "documentation": "https://github.com/netxxl/ha-silentwind",
+  "documentation": "https://github.com/Netxxl/ha-silentwind",
   "integration_type": "device",
   "iot_class": "local_polling",
-  "issue_tracker": "https://github.com/netxxl/ha-silentwind/issues",
+  "issue_tracker": "https://github.com/Netxxl/ha-silentwind/issues",
   "loggers": [
     "custom_components.silentwind"
   ],
   "requirements": [],
-  "version": "0.4.0"
+  "version": "0.4.1"
 }

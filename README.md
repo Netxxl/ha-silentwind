@@ -22,7 +22,7 @@ Silentwind-Android-App (Version 1.3.3).
 ## Installation (Home Assistant OS)
 
 1. Integration installieren, auf einem der beiden Wege:
-   - **HACS:** *HACS → ⋮ → Benutzerdefinierte Repositories* → `https://github.com/netxxl/ha-silentwind`,
+   - **HACS:** *HACS → ⋮ → Benutzerdefinierte Repositories* → `https://github.com/Netxxl/ha-silentwind`,
      Typ „Integration“. Danach „Silentwind Windgenerator“ herunterladen.
    - **Von Hand:** Den Ordner `custom_components/silentwind` nach `/config/custom_components/silentwind`
      kopieren, z. B. mit dem Add-on „Samba share“ oder „Studio Code Server“.
